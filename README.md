@@ -5,5 +5,5 @@ A Docker image to run [APIFuzzer](https://github.com/KissPeter/APIFuzzer) HTTP A
 ## Usage
 
 ```bash
-docker run -it --rm -wildwildangel/docker-apifuzzer --help
+docker run -it --rm wildwildangel/apifuzzer --help
 ```

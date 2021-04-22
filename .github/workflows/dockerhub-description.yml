@@ -22,5 +22,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: wildwildangel/docker-apifuzzer
+          repository: wildwildangel/apifuzzer
           short-description: Docker image for APIFuzzer

@@ -38,7 +38,7 @@ jobs:
           push: false
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
-          tags: "wildwildangel/docker-apifuzzer:${{ github.sha }},wildwildangel/docker-apifuzzer:latest"
+          tags: "wildwildangel/apifuzzer:${{ github.sha }},wildwildangel/apifuzzer:latest"
 
       - name: Move cache
         run: |
@@ -48,7 +48,7 @@ jobs:
       - name: Security Scan
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: "wildwildangel/docker-apifuzzer:${{ github.sha }}"
+          image-ref: "wildwildangel/apifuzzer:${{ github.sha }}"
           format: template
           template: "@/contrib/sarif.tpl"
           output: trivy-results.sarif
@@ -66,6 +66,6 @@ jobs:
 
       - name: Push the image
         run: |
-          docker push "wildwildangel/docker-apifuzzer:${{ github.sha }}"
-          docker push "wildwildangel/docker-apifuzzer:latest"
+          docker push "wildwildangel/apifuzzer:${{ github.sha }}"
+          docker push "wildwildangel/apifuzzer:latest"
         if: ${{ github.event_name != 'push' || github.ref == 'refs/heads/master' }}
