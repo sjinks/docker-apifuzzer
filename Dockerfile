@@ -1,4 +1,4 @@
-FROM python:3.10-slim@sha256:dc88dfceb13b58dc6ff12840c28f6c774a8692945db4e9c2dabeaf939b7f2614
+FROM python:3.10-slim@sha256:b587fb01826db0abd9cbd80209204aca2eb6c5bfa46bf3bb36fb2e4b954e2cdb
 
 RUN \
     apt-get -qq update && \
